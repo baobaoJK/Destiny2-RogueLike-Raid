@@ -1,0 +1,155 @@
+/* 动画 */
+@keyframes buff-description {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* 增益 BUFF */
+.buff-box .buff-block,
+.buff-box .debuff-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    padding: 8px;
+}
+.buff-box .buff-block .buff-title,
+.buff-box .debuff-block .debuff-title {
+    text-align: center;
+    color: white;
+    margin-bottom: 32px;
+}
+.buff-box .buff-block .buff-left-pointer,
+.buff-box .debuff-block .debuff-left-pointer {
+    position: absolute;
+    top: 72px;
+    left: 64px;
+    color: white;
+    font-size: 24px;
+}
+.buff-box .buff-block .buff-right-pointer,
+.buff-box .debuff-block .debuff-right-pointer {
+    position: absolute;
+    top: 72px;
+    right: 64px;
+    color: white;
+    font-size: 24px;
+}
+.buff-box .buff-block .buff-roll-list,
+.buff-box .debuff-block .debuff-roll-list {
+    position: relative;
+    width: 500px;
+    height: 180px;
+    margin-bottom: 32px;
+    text-align: center;
+    overflow: hidden;
+}
+.buff-box .buff-block .buff-roll-list p,
+.buff-box .debuff-block .debuff-roll-list p {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    color: white;
+}
+.buff-box .buff-block .buff-button,
+.buff-box .debuff-block .debuff-button {
+    font-size: 24px;
+    margin-bottom: 32px;
+}
+.buff-box .buff-block .buff-sub-title,
+.buff-box .debuff-block .debuff-sub-title {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+.buff-box .buff-block .buff-description,
+.buff-box .debuff-block .debuff-description {
+    width: 600px;
+    height: 300px;
+    padding: 12px;
+    background-color: white;
+    border-radius: 8px;
+    overflow-y: auto;
+}
+.buff-box .buff-block .buff-description .buff-description-text,
+.buff-box .debuff-block .debuff-description .debuff-description-text {
+    margin: 0;
+}
+.buff-box .buff-block .buff-description .buff-description-animation,
+.buff-box .debuff-block .debuff-description .debuff-description-animation {
+    animation: buff-description 1s;
+}
+
+/* 减益 BUFF */
+.buff-box .debuff-block .debuff-description-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    height: 300px;
+    background-color: white;
+    border-radius: 8px;
+}
+.buff-box .debuff-block .debuff-description-box .debuff-description {
+    width: 100%;
+    height: 240px;
+    margin-bottom: 16px;
+    overflow-y: auto;
+}
+.buff-box .debuff-block .debuff-description-box button {
+    position: absolute;
+    bottom: 42px;
+}
+
+/* 全局 DEBUFF */
+.all-debuff-box {
+    flex-direction: column;
+}
+
+.all-debuff-box .all-debuff-list {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+    height: 500px;
+    color: white;
+    overflow-y: hidden;
+}
+
+.all-debuff-box .all-debuff-list .all-debuff-title {
+    width: 100%;
+    text-align: left;
+}
+
+.all-debuff-box .all-debuff-list .all-debuff-roll-list {
+    position: absolute;
+    /* height: 100000px; */
+    width: 300px;
+    top: -4px;
+    text-align: center;
+}
+.all-debuff-box .all-debuff-list .all-debuff-description {
+    width: 550px;
+    opacity: 1;
+    transition: all 1s;
+}
+
+.all-debuff-box .all-debuff-list .all-debuff-animation {
+    animation: buff-description 1s;
+}
+
+.all-debuff-box .all-debuff-roll-button {
+    margin-top: 32px;
+}
+.all-debuff-box .all-debuff-button,
+.all-debuff-box .reset-all-debuff-button {
+    margin: 0px 16px;
+    font-size: 24px;
+    z-index: 1;
+}
