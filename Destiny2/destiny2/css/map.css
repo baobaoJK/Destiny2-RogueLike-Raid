@@ -1,0 +1,36 @@
+/* 地图 抽奖盒子 */
+.map-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.map-box .map-title {
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin-bottom: 32px;
+}
+.map-box .map-roll-list {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+.map-box .map-roll-list .map-list {
+    display: flex;
+}
+.map-box .map-roll-list .map-list img {
+    width: 300px;
+    height: 300px;
+    margin-right: 32px;
+}
+.map-box .map-text {
+    height: 64px;
+    color: white;
+    opacity: 0;
+    margin-bottom: 32px;
+    transition: all 1s;
+}
+.map-box .map-button {
+    transition: all 1s;
+}
