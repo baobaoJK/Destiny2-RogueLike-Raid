@@ -1,0 +1,178 @@
+/* 护甲抽奖 样式 */
+/* 武器抽奖 样式 */
+.armor-title,
+.weapon-title {
+    width: 100%;
+    height: auto;
+    color: white;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.armor-roll-buttons,
+.weapon-roll-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 128px;
+}
+
+.armor-roll-buttons .armor-roll-buttons-box,
+.weapon-roll-buttons .weapon-roll-buttons-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+}
+
+.armor-roll-buttons .armor-roll-buttons-box button,
+.weapon-roll-buttons .weapon-roll-buttons-box button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.armor-roll-buttons .armor-roll-buttons-box button:hover,
+.weapon-roll-buttons .weapon-roll-buttons-box button:hover {
+    transform: scale(1.2) rotate(360deg);
+}
+
+.armor-roll-buttons .armor-roll-buttons-box button:disabled,
+.weapon-roll-buttons .weapon-roll-buttons-box button:disabled {
+    transform: none;
+    cursor: default;
+}
+
+.armor-line,
+.weapon-line {
+    width: 90%;
+    height: 48px;
+}
+
+.armor-line .armor-description,
+.weapon-line .weapon-description {
+    padding-left: 16px;
+    color: aliceblue;
+}
+
+.armor-line .line,
+.weapon-line .line {
+    width: 100%;
+    background-color: aliceblue;
+}
+
+.armor-list,
+.weapon-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 400px;
+}
+
+.armor-list .armors,
+.weapon-list .weapons {
+    width: 30%;
+}
+
+.armor-list .armors img,
+.weapon-list .weapons img {
+    width: calc(25% - 12px);
+    height: auto;
+    margin: 4px;
+    border-radius: 12px;
+    border: 4px solid rgb(255, 200, 0);
+    box-sizing: border-box;
+}
+
+.modal-lg {
+    min-width: 1200px;
+    max-width: 1200px;
+}
+
+.modal-content {
+    background-color: transparent;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    color: white;
+}
+
+.equipment-roll-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 64px;
+    overflow: hidden;
+}
+
+.equipment-roll-box .equipment-pointer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 2px;
+    height: 150px;
+    background-color: red;
+    z-index: 1;
+}
+
+.equipment-roll-box .equipment-roll-list {
+    display: flex;
+    position: relative;
+    right: 90px;
+    width: 100000px;
+}
+
+.equipment-roll-box .equipment-roll-list img {
+    width: 104px;
+    height: 104px;
+    margin-right: 8px;
+    border: 4px solid rgb(255, 200, 0);
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.equipment-name {
+    height: 48px;
+    margin-bottom: 64px;
+}
+
+.equipment-confirm-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: 1s;
+}
+
+.equipment-confirm-box-animation {
+    animation: name 1s;
+}
+
+.equipment-confirm {
+    padding: 6px 48px;
+    background-color: royalblue;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s;
+    outline: none !important;
+    font-size: 24px;
+    border-radius: 4px;
+}
+
+.equipment-confirm:hover {
+    opacity: 0.6;
+}

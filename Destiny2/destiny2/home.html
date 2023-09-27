@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destiny2 Roguelike Raid</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/buff.css">
+    <link rel="stylesheet" href="css/equipment.css">
+</head>
+
+<body>
+    <div class="home">
+        <!-- 导航 -->
+        <div class="home-nav">
+            <ul class="nav nav-tabs justify-content-center" id="lotteryTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="map-tab" data-toggle="tab" data-target="#map" type="button"
+                        role="tab" aria-controls="map" aria-selected="true">地图抽奖</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="buff-tab" data-toggle="tab" data-target="#buff" type="button"
+                        role="tab" aria-controls="buff" aria-selected="false">BUFF 抽奖</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="all-buff-tab" data-toggle="tab" data-target="#all-buff" type="button"
+                        role="tab" aria-controls="all-buff" aria-selected="false">全局 BUFF 抽奖</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="armor-tab" data-toggle="tab" data-target="#armor" type="button"
+                        role="tab" aria-controls="armor" aria-selected="false">异域护甲抽奖</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="weapon-tab" data-toggle="tab" data-target="#weapon" type="button"
+                        role="tab" aria-controls="weapon" aria-selected="false">异域武器抽奖</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="game-list-tab" data-toggle="tab" data-target="#gameList" type="button"
+                        role="tab" aria-controls="game-list" aria-selected="false">游戏说明</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="game-play-tab" data-toggle="tab" data-target="#gamePlay" type="button"
+                        role="tab" aria-controls="game-play" aria-selected="false">游戏玩法</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="update-tab" data-toggle="tab" data-target="#update" type="button"
+                        role="tab" aria-controls="update" aria-selected="false">更新日志</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="copyright-tab" data-toggle="tab" data-target="#copyright" type="button" role="tab"
+                        aria-controls="copyright" aria-selected="false">版权声明</button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Tabs 组 -->
+        <div class="tab-content" id="lotteryTabContent">
+            <!-- 地图 抽奖页面 -->
+            <div class="tab-pane fade show active" id="map" role="tabpanel" aria-labelledby="map-tab">
+                <div class="tab-box map-box">
+                    <h1 class="map-title">抽取游玩地图</h1>
+                    <div class="map-roll-list">
+                        <div class="map-list">
+                            <img src="images/maps/深岩墓室.jpg" alt="深岩墓室.jpg">
+                        </div>
+                    </div>
+                    <div class="map-text">
+                        <h1></h1>
+                    </div>
+                    <button class="button map-button">抽取地图</button>
+                </div>
+            </div>
+
+            <!-- BUFF 抽奖页面 -->
+            <div class="tab-pane fade" id="buff" role="tabpanel" aria-labelledby="buff-tab">
+                <div class="tab-box buff-box">
+
+                    <div class="buff-block">
+                        <h1 class="buff-title">增益 BUFF</h1>
+                        <div class="buff-roll-list">
+                            <div class="buff-left-pointer">---&gt;</div>
+                            <div class="buff-list"></div>
+                            <div class="buff-right-pointer">&lt;---</div>
+                        </div>
+                        <button href="#" class="button buff-button">抽取 BUFF</button>
+                        <p class="buff-sub-title">当前 增益 BUFF</p>
+                        <div class="buff-description"></div>
+                    </div>
+
+                    <div class="debuff-block">
+                        <h1 class="debuff-title">减益 BUFF</h1>
+                        <div class="debuff-roll-list">
+                            <div class="debuff-left-pointer">---&gt;</div>
+                            <div class="debuff-list"></div>
+                            <div class="debuff-right-pointer">&lt;---</div>
+                        </div>
+                        <button href="#" class="button debuff-button">抽取 BUFF</button>
+                        <p class="debuff-sub-title">当前 减益 BUFF</p>
+                        <div class="debuff-description-box">
+                            <div class="debuff-description"></div>
+                            <button href="#" class="button reset-debuff-button">清除 BUFF</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 全局 DEBUFF 抽奖页面 -->
+            <div class="tab-pane fade" id="all-buff" role="tabpanel" aria-labelledby="all-buff-tab">
+                <div class="tab-box all-debuff-box">
+                    <div class="all-debuff-list">
+                        <h1 class="all-debuff-title">本关遭遇战的全局BUFF是：</h1>
+                        <div class="all-debuff-roll-list"></div>
+                        <div class="all-debuff-description">
+                            <h1 class="all-debuff-description-text"></h1>
+                        </div>
+                    </div>
+                    <div class="all-debuff-roll-button">
+                        <button href="#" class="button all-debuff-button">抽取 DEBUFF</button>
+                        <button href="#" class="button reset-all-debuff-button" disabled="true">重置 DEBUFF</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 异域护甲 抽奖页面 -->
+            <div class="tab-pane fade" id="armor" role="tabpanel" aria-labelledby="armor-tab">
+                <div class="tab-box armor-box">
+                    <div class="armor-title">
+                        <h1>抽取异域护甲</h1>
+                    </div>
+                    <div class="armor-roll-buttons">
+                        <div class="armor-roll-buttons-box">
+                            <button type="button" data-toggle="modal" data-target="#equipment-model" id="titanArmor">
+                                <img src="images/异域记忆水晶.png" alt="">
+                            </button>
+                            <p>泰坦</p>
+                        </div>
+                        <div class="armor-roll-buttons-box">
+                            <button type="button" data-toggle="modal" data-target="#equipment-model" id="hunterArmor">
+                                <img src="images/异域记忆水晶.png" alt="">
+                            </button>
+                            <p>猎人</p>
+                        </div>
+                        <div class="armor-roll-buttons-box">
+                            <button type="button" data-toggle="modal" data-target="#equipment-model" id="warlockArmor">
+                                <img src="images/异域记忆水晶.png" alt="">
+                            </button>
+                            <p>术士</p>
+                        </div>
+                    </div>
+                    <div class="armor-line">
+                        <p class="armor-description">这个异域水晶可能包含以下物品：</p>
+                        <hr class="line">
+                    </div>
+                    <div class="armor-list">
+                        <div class="armors titan">
+                            <img src="images/titan/圣人14的头盔.jpg" alt="圣人14的头盔.jpg" class="titanImg">
+                            <img src="images/titan/独眼面具.jpg" alt="独眼面具.jpg" class="titanImg">
+                            <img src="images/titan/难以逾越的颅骨堡垒.jpg" alt="难以逾越的颅骨堡垒.jpg" class="titanImg">
+                            <img src="images/titan/罗蕾莱辉煌头盔.jpg" alt="罗蕾莱辉煌头盔.jpg" class="titanImg">
+                            <img src="images/titan/西坦壁垒.jpg" alt="西坦壁垒.jpg" class="titanImg">
+                            <img src="images/titan/永劫安泰.jpg" alt="永劫安泰.jpg" class="titanImg">
+                            <img src="images/titan/毁灭之牙肩甲.jpg" alt="毁灭之牙肩甲.jpg" class="titanImg">
+                            <img src="images/titan/合成感受器.jpg" alt="合成感受器.jpg" class="titanImg">
+                            <img src="images/titan/亚克兴角战役钻机.jpg" alt="亚克兴角战役钻机.jpg" class="titanImg">
+                            <img src="images/titan/医疗设备.jpg" alt="医疗设备.jpg" class="titanImg">
+                            <img src="images/titan/至纯光能护心甲.jpg" alt="至纯光能护心甲.jpg" class="titanImg">
+                            <img src="images/titan/陨星胸甲.jpg" alt="陨星胸甲.jpg" class="titanImg">
+                            <img src="images/titan/猖獗雄狮.jpg" alt="猖獗雄狮.jpg" class="titanImg">
+                            <img src="images/titan/沙丘行者.jpg" alt="沙丘行者.jpg" class="titanImg">
+                            <img src="images/titan/Mk.44让开.jpg" alt="Mk.44让开.jpg" class="titanImg">
+                            <img src="images/titan/游隼胫甲.jpg" alt="游隼胫甲.jpg" class="titanImg">
+                        </div>
+                        <div class="armors hunter">
+                            <img src="images/hunter/失重引力子.jpg" alt="失重引力子.jpg" class="hunterImg">
+                            <img src="images/hunter/虫骸头冠.jpg" alt="虫骸头冠.jpg" class="hunterImg">
+                            <img src="images/hunter/刺客风帽.jpg" alt="刺客风帽.jpg" class="hunterImg">
+                            <img src="images/hunter/星界夜鹰.jpg" alt="星界夜鹰.jpg" class="hunterImg">
+                            <img src="images/hunter/永劫雨燕.jpg" alt="永劫雨燕.jpg" class="hunterImg">
+                            <img src="images/hunter/加拉诺碎片.jpg" alt="加拉诺碎片.jpg" class="hunterImg">
+                            <img src="images/hunter/骗徒的握手.jpg" alt="骗徒的握手.jpg" class="hunterImg">
+                            <img src="images/hunter/幼年阿罕卡拉之脊.jpg" alt="幼年阿罕卡拉之脊.jpg" class="hunterImg">
+                            <img src="images/hunter/巨龙之影.jpg" alt="巨龙之影.jpg" class="hunterImg">
+                            <img src="images/hunter/雷电通流.jpg" alt="雷电通流.jpg" class="hunterImg">
+                            <img src="images/hunter/矛隼胸甲.jpg" alt="矛隼胸甲.jpg" class="hunterImg">
+                            <img src="images/hunter/全知之眼.jpg" alt="全知之眼.jpg" class="hunterImg">
+                            <img src="images/hunter/奥菲斯钻机.jpg" alt="奥菲斯钻机.jpg" class="hunterImg">
+                            <img src="images/hunter/光辉跳舞机.jpg" alt="光辉跳舞机.jpg" class="hunterImg">
+                            <img src="images/hunter/踢踏5.jpg" alt="踢踏5.jpg" class="hunterImg">
+                            <img src="images/hunter/噬星者之鳞.jpg" alt="噬星者之鳞.jpg" class="hunterImg">
+                        </div>
+                        <div class="armors warlock">
+                            <img src="images/warlock/神化面纱.jpg" alt="神化面纱.jpg" class="warlockImg">
+                            <img src="images/warlock/邪冬的头盔.jpg" alt="邪冬的头盔.jpg" class="warlockImg">
+                            <img src="images/warlock/风暴头冠.jpg" alt="风暴头冠.jpg" class="warlockImg">
+                            <img src="images/warlock/真理之容.jpg" alt="真理之容.jpg" class="warlockImg">
+                            <img src="images/warlock/永劫灵魂.jpg" alt="永劫灵魂.jpg" class="warlockImg">
+                            <img src="images/warlock/反转之握.jpg" alt="反转之握.jpg" class="warlockImg">
+                            <img src="images/warlock/毒蛇面貌.jpg" alt="毒蛇面貌.jpg" class="warlockImg">
+                            <img src="images/warlock/卡恩西坦臂章.jpg" alt="卡恩西坦臂章.jpg" class="warlockImg">
+                            <img src="images/warlock/狡诈严冬.jpg" alt="狡诈严冬.jpg" class="warlockImg">
+                            <img src="images/warlock/炎阳护腕.jpg" alt="炎阳护腕.jpg" class="warlockImg">
+                            <img src="images/warlock/炫火.jpg" alt="炫火.jpg" class="warlockImg">
+                            <img src="images/warlock/星火协议.jpg" alt="星火协议.jpg" class="warlockImg">
+                            <img src="images/warlock/割线纤维.jpg" alt="割线纤维.jpg" class="warlockImg">
+                            <img src="images/warlock/地磁安定靴.jpg" alt="地磁安定靴.jpg" class="warlockImg">
+                            <img src="images/warlock/横断之步.jpg" alt="横断之步.jpg" class="warlockImg">
+                            <img src="images/warlock/月之阵营靴.jpg" alt="月之阵营靴.jpg" class="warlockImg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 异域武器 抽奖页面 -->
+            <div class="tab-pane fade" id="weapon" role="tabpanel" aria-labelledby="weapon-tab">
+                <div class="tab-box weapon-box">
+                    <div class="weapon-title">
+                        <h1>抽取异域武器</h1>
+                    </div>
+                    <div class="weapon-roll-buttons">
+                        <div class="weapon-roll-buttons-box">
+                            <button type="button" data-toggle="modal" data-target="#equipment-model" id="weapon-button">
+                                <img src="images/异域记忆水晶.png" alt="">
+                            </button>
+                            <p>异域武器记忆水晶</p>
+                        </div>
+                    </div>
+                    <div class="weapon-line">
+                        <p class="weapon-description">这个异域水晶包含以下物品：</p>
+                        <hr class="line">
+                    </div>
+                    <div class="weapon-list">
+                        <div class="weapons weapons-1">
+                            <img src="images/weapons/1/糖果生意.jpg" alt="糖果生意.jpg" class="weaponImg">
+                            <img src="images/weapons/1/越橘.jpg" alt="越橘.jpg" class="weaponImg">
+                            <img src="images/weapons/1/监护人.jpg" alt="监护人.jpg" class="weaponImg">
+                            <img src="images/weapons/1/黑桃A.jpg" alt="黑桃A.jpg" class="weaponImg">
+                            <img src="images/weapons/1/全面爆发.jpg" alt="全面爆发.jpg" class="weaponImg">
+                            <img src="images/weapons/1/劲弩.jpg" alt="劲弩.jpg" class="weaponImg">
+                            <img src="images/weapons/1/流明.jpg" alt="流明.jpg" class="weaponImg">
+                            <img src="images/weapons/1/堡垒.jpg" alt="堡垒.jpg" class="weaponImg">
+                            <img src="images/weapons/1/阿格尔的权杖.jpg" alt="阿格尔的权杖.jpg" class="weaponImg">
+                            <img src="images/weapons/1/枯骨鳞片.jpg" alt="枯骨鳞片.jpg" class="weaponImg">
+                            <img src="images/weapons/1/瞬变风暴.jpg" alt="瞬变风暴.jpg" class="weaponImg">
+                            <img src="images/weapons/1/条件终局.jpg" alt="条件终局.jpg" class="weaponImg">
+                        </div>
+                        <div class="weapons weapons-2">
+                            <img src="images/weapons/2/严苛光芒.jpg" alt="严苛光芒.jpg" class="weaponImg">
+                            <img src="images/weapons/2/赴险者.jpg" alt="赴险者.jpg" class="weaponImg">
+                            <img src="images/weapons/2/烈日弹丸.jpg" alt="烈日弹丸.jpg" class="weaponImg">
+                            <img src="images/weapons/2/战狮.jpg" alt="战狮.jpg" class="weaponImg">
+                            <img src="images/weapons/2/土卫十三.jpg" alt="土卫十三.jpg" class="weaponImg">
+                            <img src="images/weapons/2/三体坐观者.jpg" alt="三体坐观者.jpg" class="weaponImg">
+                            <img src="images/weapons/2/帝王蝶.jpg" alt="帝王蝶.jpg" class="weaponImg">
+                            <img src="images/weapons/2/神圣裁决.jpg" alt="神圣裁决.jpg" class="weaponImg">
+                            <img src="images/weapons/2/第四骑士.jpg" alt="第四骑士.jpg" class="weaponImg">
+                            <img src="images/weapons/2/汤米的火柴盒.jpg" alt="汤米的火柴盒.jpg" class="weaponImg">
+                            <img src="images/weapons/2/Vex揭秘者.jpg" alt="Vex揭秘者.jpg" class="weaponImg">
+                            <img src="images/weapons/2/死亡信使.jpg" alt="死亡信使.jpg" class="weaponImg">
+                        </div>
+                        <div class="weapons weapons-3">
+                            <img src="images/weapons/3/D.A.R.C.I.jpg" alt="D.A.R.C.I.jpg">
+                            <img src="images/weapons/3/牵引器火炮.jpg" alt="牵引器火炮.jpg" class="weaponImg">
+                            <img src="images/weapons/3/沃德克里夫线圈.jpg" alt="沃德克里夫线圈.jpg" class="weaponImg">
+                            <img src="images/weapons/3/群居者.jpg" alt="群居者.jpg" class="weaponImg">
+                            <img src="images/weapons/3/蠕虫低语.jpg" alt="蠕虫低语.jpg" class="weaponImg">
+                            <img src="images/weapons/3/睡者之吼.jpg" alt="睡者之吼.jpg" class="weaponImg">
+                            <img src="images/weapons/3/双尾狐.jpg" alt="双尾狐.jpg" class="weaponImg">
+                            <img src="images/weapons/3/混乱无序.jpg" alt="混乱无序.jpg" class="weaponImg">
+                            <img src="images/weapons/3/死亡使者.jpg" alt="死亡使者.jpg" class="weaponImg">
+                            <img src="images/weapons/3/利维坦之息.jpg" alt="利维坦之息.jpg" class="weaponImg">
+                            <img src="images/weapons/3/救赎之握.jpg" alt="救赎之握.jpg" class="weaponImg">
+                            <img src="images/weapons/3/加拉尔号角.jpg" alt="加拉尔号角.jpg" class="weaponImg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 游戏说明页面 -->
+            <div class="tab-pane fade" id="gameList" role="tabpanel" aria-labelledby="game-list-tab">
+                <iframe src="roguelike.html" frameborder="0" width="100%" height="100%"></iframe>
+            </div>
+
+            <!-- 游戏玩法页面 -->
+            <div class="tab-pane fade" id="gamePlay" role="tabpanel" aria-labelledby="game-play-tab">
+                <iframe src="gameplay.html" frameborder="0" width="100%" height="100%"></iframe>
+            </div>
+
+            <!-- 更新日志 -->
+            <div class="tab-pane fade" id="update" role="tabpanel" aria-labelledby="update-tab">
+                <iframe src="update.html" frameborder="0" width="100%" height="100%"></iframe>
+            </div>
+
+            <!-- 版权声明 -->
+            <div class="tab-pane fade" id="copyright" role="tabpanel" aria-labelledby="copyright-tab">
+                <iframe src="copyright.html" frameborder="0" width="100%" height="100%"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- 装备抽奖模态框 -->
+    <div class="modal fade" id="equipment-model" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="equipment-modelLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="equipment-roll-box">
+                        <div class="equipment-pointer"></div>
+                        <div class="equipment-roll-list">
+
+                        </div>
+                    </div>
+                    <div class="equipment-confirm-box">
+                        <h1 class="equipment-name"></h1>
+                        <button type="button" class="equipment-confirm equipment-close" data-dismiss="modal"
+                            aria-label="Close">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>当前网页版本为 RogueLike Raid Version 1.3 | 请完整的阅读 《游戏说明》 与 《游戏玩法》 后再开始游戏，以免影响游戏体验</p>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/lottery.js"></script>
+<script src="js/map.js"></script>
+<script src="js/buff.js"></script>
+<script src="js/equipment.js"></script>
+
+</html>
